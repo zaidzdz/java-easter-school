@@ -3,10 +3,10 @@
 import java.util.*;
 
 public class Easter{
-    private int[] algorithimValues;
+    private double[] algorithimValues = new double[30]; 
     private int algorithimValuesIndex = 0;
     
-    public void addAlgorithimValue(int value){
+    public void addAlgorithimValue(double value){
         this.algorithimValues[this.algorithimValuesIndex] = value;
         ++this.algorithimValuesIndex;
     }
@@ -16,22 +16,13 @@ public class Easter{
         }
         return this.algorithimValuesIndex-1; 
     }
-    public double getAlgorthimValueByLetter(char letter) (
-    )
+    public double getAlgorthimValueByLetter(char letter)
     {
-        return 97-(letter); //97 is asci a
+        int index = 97-(letter);
+        return this.algorithimValues[index]; //97 is asci 'c'
 
     }
-    public void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); //this allows you to read input from the user.
-        
-        addAlgorithimValue(scanner.nextInt());
-        addAlgorithimValue(getPreviousAlgorithimValue() % 19);
-        addAlgorithimValue(getPreviousAlgorithimValue() );
-        
 
-
-    }
 }
 
 
