@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-            Easter easter = new Easter();
             int y = scanner.nextInt();
+            Easter easter = new Easter(y);
             easter.addAlgorithimValue('a', y % 19);
             easter.addAlgorithimValue('b', (y / 100));
             easter.addAlgorithimValue('c', y % 100);
@@ -16,7 +16,6 @@ public class Main {
             easter.addAlgorithimValue('h', (19 * easter.byLetter('a')
                     + easter.byLetter('b')
                     - easter.byLetter('d')
-                    + easter.byLetter('b')
                     - easter.byLetter('g') + 15) % 30);
             easter.addAlgorithimValue('i', easter.byLetter('c') / 4); // i
             easter.addAlgorithimValue('k', (easter.byLetter('c') % 4)); // k
@@ -29,6 +28,8 @@ public class Main {
             int nWithoutDiv = (easter.byLetter('h')+easter.byLetter('r') - 7 * easter.byLetter('m') + 114);
             easter.addAlgorithimValue('n',  nWithoutDiv / 31);
             easter.addAlgorithimValue('p',  nWithoutDiv % 31);
+
+            easter.printAll();
         }   
         
     }
