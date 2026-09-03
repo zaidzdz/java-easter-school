@@ -1,22 +1,22 @@
 public class Easter{
-    private double[] algorithimValues = new double[30]; 
+    private int[] algorithimValues = new int[30]; 
     private char[] algorithimLetters = new char[300];
     private int algorithimValuesIndex = 0;
     
-    public void addAlgorithimValue(char letter, double value){
+    public void addAlgorithimValue(char letter, int value){
         this.algorithimValues[this.algorithimValuesIndex] = value;
         this.algorithimLetters[this.algorithimValuesIndex] = letter;
         if(this.algorithimValuesIndex != algorithimValues.length-1) { //prevent overflow
             ++this.algorithimValuesIndex; 
         }
     }
-    public double getPreviousAlgorithimValue(){
+    public int getPreviousAlgorithimValue(){
         if (this.algorithimValuesIndex <= 0){
             return 0;
         }
         return this.algorithimValuesIndex-1; 
     }
-    public double byLetter(char letter)
+    public int byLetter(char letter)
     {
         //linear search is fine because of small amount of values
         for(int i = 0; i<algorithimLetters.length;i++){

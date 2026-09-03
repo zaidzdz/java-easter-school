@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
             Easter easter = new Easter();
-            double y = scanner.nextInt();
+            int y = scanner.nextInt();
             easter.addAlgorithimValue('a', y % 19);
             easter.addAlgorithimValue('b', (y / 100));
             easter.addAlgorithimValue('c', y % 100);
@@ -26,10 +26,9 @@ public class Main {
             - easter.byLetter('k')) % 7
             );
             easter.addAlgorithimValue('m', (easter.byLetter('a') + 11 * easter.byLetter('h') + 22 * easter.byLetter('r')) / 451);
-            double nWithoutDiv = (easter.byLetter('h')+easter.byLetter('r') - 7 * easter.byLetter('m') + 114);
+            int nWithoutDiv = (easter.byLetter('h')+easter.byLetter('r') - 7 * easter.byLetter('m') + 114);
             easter.addAlgorithimValue('n',  nWithoutDiv / 31);
             easter.addAlgorithimValue('p',  nWithoutDiv % 31);
-
         }   
         
     }
