@@ -1,14 +1,14 @@
-// Zaid Zamani
-// This program will calculate the date easter falls on given a year after 1583.
-import java.util.*;
-
 public class Easter{
     private double[] algorithimValues = new double[30]; 
+    private char[] algorithimLetters = new char[300];
     private int algorithimValuesIndex = 0;
     
-    public void addAlgorithimValue(double value){
+    public void addAlgorithimValue(char letter, double value){
         this.algorithimValues[this.algorithimValuesIndex] = value;
-        ++this.algorithimValuesIndex;
+        this.algorithimLetters[this.algorithimValuesIndex] = letter;
+        if(this.algorithimValuesIndex != algorithimValues.length-1) { //prevent overflow
+            ++this.algorithimValuesIndex; 
+        }
     }
     public double getPreviousAlgorithimValue(){
         if (this.algorithimValuesIndex <= 0){
@@ -16,11 +16,20 @@ public class Easter{
         }
         return this.algorithimValuesIndex-1; 
     }
-    public double getAlgorthimValueByLetter(char letter)
+    public double byLetter(char letter)
     {
-        int index = 97-(letter);
-        return this.algorithimValues[index]; //97 is asci 'c'
+        //linear search is fine because of small amount of values
+        for(int i = 0; i<algorithimLetters.length;i++){
+            //this assumes theres only one value for each letter
+            if(algorithimLetters[i] == letter){
+                return algorithimValues[i];
+            }
+        }
+        return '\u0000'; //null char 
 
+    }
+    public void printAll(){
+        for(int i = 0;i<algorithimLetters)
     }
 
 }
