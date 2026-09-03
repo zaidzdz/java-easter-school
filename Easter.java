@@ -41,7 +41,7 @@ public class Easter {
             System.out.println(this.algorithimLetters[i] + " = " + this.algorithimValues[i]);
         }
         System.out
-                .println("Easter in " + this.year + " falls on " + this.byLetter('n') + "/" + (this.byLetter('p') + 1));
+                .println("\nEaster in " + this.year + " falls on " + this.byLetter('n') + "/" + (this.byLetter('p') + 1));
     }
 
 }
